@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="5dp"
+    tools:context=".ui.Home.HomeFragment">
+    <!-- App Name   -->
+    <TextView
+        android:id="@+id/app_name_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:text="@string/androrawg_store"
+        android:textSize="28sp"
+        android:textStyle="bold"
+        tools:ignore="RelativeOverlap" />
+    <!--App Name Desc-->
+    <TextView
+        android:id="@+id/app_name_desc_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/app_name_tv"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="-5dp"
+        android:text="@string/find_your_best_game_here"
+        android:textSize="14sp"
+        android:textStyle="italic" />
+    <!--User Icon-->
+    <ImageView
+        android:layout_width="56dp"
+        android:layout_height="56dp"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
+        android:contentDescription="@string/user_logo"
+        android:src="@mipmap/ic_launcher" />
+    <!--Image Slider-->
+    <RelativeLayout
+        android:id="@+id/image_slider_wrapper"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_marginTop="15dp"
+        android:layout_below="@+id/app_name_desc_tv">
+        <TextView
+            android:visibility="invisible"
+            android:id="@+id/error_tv_slider"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/cannot_load_the_data"
+            android:layout_centerInParent="true"
+            android:textAlignment="center"/>
+        <ProgressBar
+            android:id="@+id/slider_progress_bar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="invisible"
+            android:layout_centerInParent="true"
+            />
+        <RelativeLayout
+            android:id="@+id/image_slider"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            >
+            <androidx.viewpager.widget.ViewPager
+                android:id="@+id/viewpager_slider_banner"
+                android:layout_width="match_parent"
+                android:layout_height="200dp" />
+
+            <me.relex.circleindicator.CircleIndicator
+                android:id="@+id/ci_indicator_slider"
+                android:layout_width="match_parent"
+                android:layout_height="16dp"
+                android:layout_alignParentBottom="true"
+                android:background="#33000000"
+                android:elevation="4dp" />
+        </RelativeLayout>
+    </RelativeLayout>
+
+    <!--Button Row-->
+    <Button
+        android:layout_below="@id/image_slider_wrapper"
+        android:layout_marginTop="14dp"
+        android:id="@+id/find_game_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_centerInParent="true"
+        android:textAllCaps="false"
+        android:text="@string/find_favorite_game"
+        android:drawableEnd="@drawable/ic_baseline_search_24"
+        />
+    <!--Goty Game-->
+    <TextView
+        android:id="@+id/tv_goty"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/find_game_btn"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="5dp"
+        android:text="@string/best_game_of_the_year"
+        android:textSize="16sp"
+        android:textStyle="bold" />
+    <RelativeLayout
+        android:id="@+id/goty_wrapper"
+        android:layout_width="match_parent"
+        android:layout_height="205dp"
+        android:layout_below="@id/tv_goty">
+        <TextView
+            android:visibility="invisible"
+            android:id="@+id/error_tv_goty"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/cannot_load_the_data"
+            android:layout_centerInParent="true"
+            android:textAlignment="center"/>
+        <ProgressBar
+            android:id="@+id/goty_progress_bar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="invisible"
+            android:layout_centerInParent="true"
+            />
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_goty"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="2dp"
+            android:layout_marginEnd="5dp"
+            android:orientation="horizontal"
+            tools:listitem="@layout/rv_best_goty" />
+    </RelativeLayout>
+
+
+<!--Latest Game Release-->
+    <TextView
+        android:id="@+id/tv_game_latest"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="10dp"
+        android:text="@string/latest_game_release"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:layout_below="@id/goty_wrapper"/>
+<RelativeLayout
+    android:id="@+id/latest_game_wrapper"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_below="@id/tv_game_latest">
+    <TextView
+        android:visibility="invisible"
+        android:id="@+id/error_tv_latest"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/cannot_load_the_data"
+        android:layout_centerInParent="true"
+        android:textAlignment="center"/>
+    <ProgressBar
+        android:id="@+id/latest_game_progressbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="invisible"
+        android:layout_centerInParent="true"
+        />
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_latest_release"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="2dp"
+        android:layout_marginEnd="5dp"
+        android:orientation="horizontal"
+        tools:listitem="@layout/rv_list_game"/>
+</RelativeLayout>
+
+
+</RelativeLayout>

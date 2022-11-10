@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="200dp"
+    android:id="@+id/rv_goty_wrapper"
+    android:layout_height="200dp"
+    android:layout_marginEnd="10dp"
+    android:background="@drawable/background_card"
+    android:orientation="vertical">
+
+    <ImageView
+        android:id="@+id/img_item_goty"
+        android:layout_width="match_parent"
+        android:layout_height="130dp"
+        android:contentDescription="@string/img_goty_game"
+        android:scaleType="centerCrop"
+        android:src="@mipmap/ic_launcher" />
+
+    <TextView
+        android:id="@+id/platform_item_goty"
+        android:layout_width="110dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/img_item_goty"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="5dp"
+        android:ellipsize="end"
+        android:justificationMode="inter_word"
+        android:maxLines="1"
+        android:text="@string/example_platform"
+        android:textSize="11sp" />
+
+    <TextView
+        android:id="@+id/name_item_goty"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/platform_item_goty"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="5dp"
+        android:ellipsize="end"
+        android:maxLines="2"
+        android:text="@string/game_name"
+        android:justificationMode="inter_word"
+        android:textSize="16sp"
+        android:textStyle="bold" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/img_item_goty"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="5dp"
+        android:orientation="horizontal"
+        tools:ignore="UseCompoundDrawables">
+
+        <ImageView
+            android:id="@+id/img_star_item_goty"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_marginStart="8dp"
+            android:contentDescription="@string/rate"
+            android:src="@drawable/ic_star_rate" />
+
+        <TextView
+            android:id="@+id/rate_item_goty"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="@string/example_rate"
+            android:textSize="12sp" />
+    </LinearLayout>
+
+
+</RelativeLayout>

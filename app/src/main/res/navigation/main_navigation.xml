@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_navigation"
+    app:startDestination="@id/homeFragment">
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.exfarnanda1945.rawgsubmission.ui.Home.HomeFragment"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_homeFragment_to_gameDetail"
+            app:destination="@id/gameDetail" />
+        <action
+            android:id="@+id/action_homeFragment_to_findGameFragment"
+            app:destination="@id/findGameFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/gameDetail"
+        android:name="com.exfarnanda1945.rawgsubmission.ui.Detail.GameDetailsFragment"
+        android:label="fragment_game_detail"
+        tools:layout="@layout/fragment_game_detail" >
+        <argument
+            android:name="gameDetails"
+            app:argType="com.exfarnanda1945.rawgsubmission.model.ResultsItem" />
+    </fragment>
+    <fragment
+        android:id="@+id/findGameFragment"
+        android:name="com.exfarnanda1945.rawgsubmission.ui.Find.FindGameFragment"
+        android:label="fragment_find_game"
+        tools:layout="@layout/fragment_find_game" >
+        <action
+            android:id="@+id/action_findGameFragment_to_gameDetail"
+            app:destination="@id/gameDetail" />
+    </fragment>
+</navigation>
