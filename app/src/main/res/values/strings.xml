@@ -12,11 +12,11 @@
     <string name="example_metacritic">84</string>
     <string name="rating">Rating:</string>
     <string name="example_rating">4.4/5</string>
-    <string name="platform">Platform:</string>
+    <string name="platform">Platform: </string>
     <string name="example_platform">Example Platform</string>
-    <string name="genre">Genre:</string>
+    <string name="genre">Genre: </string>
     <string name="example_genre">Example Genre</string>
-    <string name="available_on">Available on:</string>
+    <string name="available_on">Available on: </string>
     <string name="example_store">Example Store</string>
     <string name="minimum_specs">Minimum Specs</string>
     <string name="example_spec">Example Spec</string>

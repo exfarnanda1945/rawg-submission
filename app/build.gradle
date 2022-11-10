@@ -17,8 +17,8 @@ android {
         versionCode 1
         versionName "1.0"
 
-        buildConfigField "String", "BASE_URL", "\"https://api.rawg.io/api/\""
-        buildConfigField "String", "API_KEY", "\"47b9f7a441b54351ae6a87a3809ea25a\""
+        buildConfigField ("String", "BASE_URL", BASE_URL)
+        buildConfigField ("String", "API_KEY", API_KEY)
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }

@@ -17,7 +17,7 @@
         android:src="@mipmap/ic_launcher" />
 
     <TextView
-        android:id="@+id/platform_item_goty"
+        android:id="@+id/release_item_goty"
         android:layout_width="110dp"
         android:layout_height="wrap_content"
         android:layout_below="@id/img_item_goty"
@@ -26,14 +26,14 @@
         android:ellipsize="end"
         android:justificationMode="inter_word"
         android:maxLines="1"
-        android:text="@string/example_platform"
+        android:text="@string/example_date"
         android:textSize="11sp" />
 
     <TextView
         android:id="@+id/name_item_goty"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/platform_item_goty"
+        android:layout_below="@id/release_item_goty"
         android:layout_marginStart="8dp"
         android:layout_marginTop="5dp"
         android:ellipsize="end"

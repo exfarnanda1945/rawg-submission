@@ -22,7 +22,7 @@ class GameDetailsFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         _binding = FragmentGameDetailBinding.inflate(layoutInflater, container, false)
         val view = binding.root
         val data = args.gameDetails
@@ -35,9 +35,9 @@ class GameDetailsFragment : Fragment() {
             detailGameMetacriticDesc.text = data.metacritic.toString()
             detailGameRatingDesc.text = "${data.rating}/5"
             detailGamePlatformDesc.text =
-                data.parentPlatforms?.map { it?.platform?.name }?.joinToString()
-            detailGameGenreDesc.text = data.genres?.map { it?.name }?.joinToString()
-            detailGameStoreDesc.text = data.stores?.map { it?.store?.name }?.joinToString()
+                " " + data.parentPlatforms?.map { it?.platform?.name }?.joinToString()
+            detailGameGenreDesc.text = " " + data.genres?.map { it?.name }?.joinToString()
+            detailGameStoreDesc.text = " " + data.stores?.map { it?.store?.name }?.joinToString()
             detailGameMinSpecDesc.text =
                 data.platforms?.find { it?.platform?.id == 4 }?.requirementsEn?.minimum ?: "-"
             detailGameReqSpecDesc.text =

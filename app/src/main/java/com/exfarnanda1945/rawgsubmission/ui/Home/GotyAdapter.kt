@@ -1,5 +1,6 @@
 package com.exfarnanda1945.rawgsubmission.ui.Home
 
+import android.annotation.SuppressLint
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import android.widget.ImageView
@@ -31,7 +32,7 @@ class GotyAdapter : RecyclerView.Adapter<GotyAdapter.MainViewHolder>() {
     inner class MainViewHolder(itemBinding: RvBestGotyBinding) :
         RecyclerView.ViewHolder(itemBinding.root) {
         val itemImg: ImageView = itemBinding.imgItemGoty
-        val itemTvPlatform: TextView = itemBinding.platformItemGoty
+        val itemRelease: TextView = itemBinding.releaseItemGoty
         val itemTvName: TextView = itemBinding.nameItemGoty
         val itemTvRate: TextView = itemBinding.rateItemGoty
         val itemWrapper:RelativeLayout = itemBinding.rvGotyWrapper
@@ -47,14 +48,13 @@ class GotyAdapter : RecyclerView.Adapter<GotyAdapter.MainViewHolder>() {
         )
     }
 
+    @SuppressLint("SetTextI18n")
     override fun onBindViewHolder(holder: MainViewHolder, position: Int) {
         val item = differ.currentList[position]
 
         holder.apply {
             Glide.with(itemView.context).load(item.backgroundImage).into(itemImg)
-            itemTvPlatform.text = item.parentPlatforms?.map {
-                it?.platform?.name
-            }?.joinToString()
+            itemRelease.text = "release: ${item.released}"
             itemTvName.text = item.name
             itemTvRate.text = item.rating.toString()
             itemWrapper.setOnClickListener {

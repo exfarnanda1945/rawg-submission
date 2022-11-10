@@ -36,13 +36,13 @@
             android:textStyle="bold" />
 
         <TextView
-            android:id="@+id/item_genre"
+            android:id="@+id/item_release"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:maxLines="1"
             android:layout_marginStart="5dp"
             android:textSize="12sp"
-            android:text="@string/genre"
+            android:text="@string/example_date"
             android:layout_toEndOf="@id/item_img"
             android:layout_below="@id/item_name"
             android:ellipsize="end"
@@ -57,7 +57,7 @@
             android:textSize="12sp"
             android:text="@string/platform"
             android:layout_toEndOf="@id/item_img"
-            android:layout_below="@id/item_genre"
+            android:layout_below="@id/item_release"
             android:ellipsize="end"
             android:justificationMode="inter_word"
             />

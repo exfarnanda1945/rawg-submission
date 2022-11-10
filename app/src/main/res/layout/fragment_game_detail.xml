@@ -3,13 +3,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
     tools:context=".ui.Detail.GameDetailsFragment">
 
     <ImageView
         android:id="@+id/detail_game_img"
         android:layout_width="match_parent"
         android:layout_height="220dp"
+
         android:contentDescription="@string/game_image"
         android:scaleType="fitXY"
         android:src="@mipmap/ic_launcher" />
@@ -20,6 +20,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/detail_game_img"
         android:layout_marginTop="5dp"
+        android:layout_marginEnd="20dp"
         android:maxLines="2"
         android:text="@string/game_name"
         android:textAlignment="center"
@@ -31,8 +32,9 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/detail_game_name"
-        android:layout_marginTop="15dp"
-        android:paddingHorizontal="30dp">
+        android:paddingHorizontal="30dp"
+        android:layout_marginTop="20dp"
+        >
 
         <LinearLayout
             android:id="@+id/detail_game_release"
@@ -79,8 +81,7 @@
                 android:text="@string/example_metacritic"
                 android:textAlignment="center"
                 android:textSize="16sp"
-                android:textStyle="bold"
-                />
+                android:textStyle="bold" />
         </LinearLayout>
 
         <LinearLayout
@@ -129,6 +130,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/detail_info_wrapper"
         android:layout_marginTop="15dp"
+        android:layout_marginEnd="20dp"
         android:layout_toEndOf="@id/detail_game_platform"
         android:maxLines="2"
         android:text="@string/example_platform"
@@ -151,12 +153,14 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/detail_game_platform"
         android:layout_marginTop="10dp"
+        android:layout_marginEnd="20dp"
         android:layout_toEndOf="@id/detail_game_genre"
         android:maxLines="2"
         android:text="@string/example_genre"
         android:textSize="14sp" />
 
     <TextView
+
         android:id="@+id/detail_game_store"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -169,11 +173,13 @@
         android:textStyle="bold" />
 
     <TextView
+
         android:id="@+id/detail_game_store_desc"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/detail_game_genre"
         android:layout_marginTop="10dp"
+        android:layout_marginEnd="20dp"
         android:layout_toEndOf="@id/detail_game_store"
         android:maxLines="2"
         android:text="@string/example_store"
@@ -196,6 +202,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/detail_game_min_spec"
         android:layout_marginStart="10dp"
+        android:layout_marginEnd="30dp"
         android:justificationMode="inter_word"
         android:text="@string/example_spec" />
 
@@ -216,6 +223,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/detail_game_req_spec"
         android:layout_marginStart="10dp"
+        android:layout_marginEnd="30dp"
         android:justificationMode="inter_word"
         android:text="@string/example_spec" />
 
@@ -235,8 +243,9 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/detail_game_sc"
-        android:layout_marginHorizontal="15dp"
+        android:layout_marginStart="15dp"
         android:layout_marginTop="5dp"
+        android:layout_marginEnd="30dp"
         tools:listitem="@layout/rv_screenshoot_game" />
 
 

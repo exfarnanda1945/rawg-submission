@@ -31,7 +31,7 @@ open class ListGameAdapter:RecyclerView.Adapter<ListGameAdapter.MainViewHolder>(
         RecyclerView.ViewHolder(itemBinding.root) {
         val itemImg: ImageView = itemBinding.itemImg
         val itemTvPlatform: TextView = itemBinding.itemPlatform
-        val itemTvGenres: TextView = itemBinding.itemGenre
+        val itemRelease: TextView = itemBinding.itemRelease
         val itemTvName: TextView = itemBinding.itemName
         val itemTvRate: TextView = itemBinding.itemRating
         val itemWrapper: CardView = itemBinding.latestGameItemWrapper
@@ -53,11 +53,7 @@ open class ListGameAdapter:RecyclerView.Adapter<ListGameAdapter.MainViewHolder>(
 
         holder.apply {
             Glide.with(itemView.context).load(item.backgroundImage).into(itemImg)
-            itemTvGenres.text = "Genre: ${
-                item.genres?.map {
-                    it?.name
-                }?.joinToString()
-            }"
+            itemRelease.text = "Release: ${item.released}"
             itemTvPlatform.text = "Platform: ${
                 item.parentPlatforms?.map {
                     it?.platform?.name
