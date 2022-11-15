@@ -6,6 +6,7 @@
     android:layout_height="130dp"
     android:background="@android:drawable/dialog_holo_light_frame"
     android:elevation="10dp"
+    card_view:cardMaxElevation="1dp"
     android:orientation="horizontal"
     card_view:cardCornerRadius="4dp"
     card_view:cardElevation="4dp"
