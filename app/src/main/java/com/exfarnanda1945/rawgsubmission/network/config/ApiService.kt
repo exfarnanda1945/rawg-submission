@@ -1,6 +1,6 @@
 package com.exfarnanda1945.rawgsubmission.network.config
 
-import com.exfarnanda1945.rawgsubmission.network.route.GamesRoute
+import com.exfarnanda1945.rawgsubmission.network.api.GamesApi
 import okhttp3.OkHttpClient
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
@@ -22,7 +22,7 @@ object ApiService {
             .build()
     }
 
-    val GameService:GamesRoute by lazy {
-        retrofit.create(GamesRoute::class.java)
+    val GameService:GamesApi by lazy {
+        retrofit.create(GamesApi::class.java)
     }
 }

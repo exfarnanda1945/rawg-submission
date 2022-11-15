@@ -6,7 +6,7 @@
     app:startDestination="@id/homeFragment">
     <fragment
         android:id="@+id/homeFragment"
-        android:name="com.exfarnanda1945.rawgsubmission.ui.Home.HomeFragment"
+        android:name="com.exfarnanda1945.rawgsubmission.ui.home.HomeFragment"
         android:label="Home"
         tools:layout="@layout/fragment_home" >
         <action
@@ -18,16 +18,16 @@
     </fragment>
     <fragment
         android:id="@+id/gameDetail"
-        android:name="com.exfarnanda1945.rawgsubmission.ui.Detail.GameDetailsFragment"
+        android:name="com.exfarnanda1945.rawgsubmission.ui.detail.GameDetailsFragment"
         android:label="Detail Game"
         tools:layout="@layout/fragment_game_detail" >
         <argument
             android:name="gameDetails"
-            app:argType="com.exfarnanda1945.rawgsubmission.model.ResultsItem" />
+            app:argType="com.exfarnanda1945.rawgsubmission.model.GameResponseResultsItem" />
     </fragment>
     <fragment
         android:id="@+id/findGameFragment"
-        android:name="com.exfarnanda1945.rawgsubmission.ui.Find.FindGameFragment"
+        android:name="com.exfarnanda1945.rawgsubmission.ui.find.FindGameFragment"
         android:label="Find Game"
         tools:layout="@layout/fragment_find_game" >
         <action

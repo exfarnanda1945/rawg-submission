@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
 android:layout_marginStart="5dp"
     android:layout_marginEnd="20dp"
-    tools:context=".ui.Find.FindGameFragment">
+    tools:context=".ui.find.FindGameFragment">
 
     <TextView
         android:id="@+id/key_result_find_game"

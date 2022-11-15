@@ -5,13 +5,13 @@ import com.google.gson.annotations.SerializedName
 import kotlinx.parcelize.Parcelize
 
 @Parcelize
-data class GameResponse(
+data class GameResponseList(
     @field:SerializedName("results")
-    val results: List<ResultsItem?>? = null
+    val results: List<GameResponseResultsItem?>? = null
 ) : Parcelable
 
 @Parcelize
-data class Platform(
+data class GameResponsePlatform(
 
     @field:SerializedName("name")
     val name: String? = null,
@@ -24,7 +24,7 @@ data class Platform(
 ) : Parcelable
 
 @Parcelize
-data class ShortScreenshotsItem(
+data class GameResponseShortScreenshotsItem(
 
     @field:SerializedName("image")
     val image: String? = null,
@@ -34,16 +34,16 @@ data class ShortScreenshotsItem(
 ) : Parcelable
 
 @Parcelize
-data class PlatformsItem(
+data class GameResponsePlatformsItem(
     @field:SerializedName("requirements_en")
-    val requirementsEn: RequirementsEn? = null,
+    val requirementsEn: GameResponseRequirementsEn? = null,
     @field:SerializedName("platform")
-    val platform: Platform? = null
+    val platform: GameResponsePlatform? = null
 
 ) : Parcelable
 
 @Parcelize
-data class RequirementsEn(
+data class GameResponseRequirementsEn(
 
     @field:SerializedName("minimum")
     val minimum: String? = null,
@@ -53,7 +53,7 @@ data class RequirementsEn(
 ) : Parcelable
 
 @Parcelize
-data class GenresItem(
+data class GameResponseGenresItem(
 
     @field:SerializedName("name")
     val name: String? = null,
@@ -66,7 +66,7 @@ data class GenresItem(
 ) : Parcelable
 
 @Parcelize
-data class Store(
+data class GameResponseStore(
 
     @field:SerializedName("name")
     val name: String? = null,
@@ -79,24 +79,24 @@ data class Store(
 ) : Parcelable
 
 @Parcelize
-data class ParentPlatformsItem(
+data class GameResponseParentPlatformsItem(
 
     @field:SerializedName("platform")
-    val platform: Platform? = null
+    val platform: GameResponsePlatform? = null
 ) : Parcelable
 
 @Parcelize
-data class StoresItem(
+data class GameResponseStoresItem(
 
     @field:SerializedName("store")
-    val store: Store? = null
+    val store: GameResponseStore? = null
 ) : Parcelable
 
 @Parcelize
-data class ResultsItem(
+data class GameResponseResultsItem(
 
     @field:SerializedName("stores")
-    val stores: List<StoresItem?>? = null,
+    val stores: List<GameResponseStoresItem?>? = null,
 
 
     @field:SerializedName("rating")
@@ -106,16 +106,16 @@ data class ResultsItem(
     val metacritic: Int? = 0,
 
     @field:SerializedName("short_screenshots")
-    val shortScreenshots: List<ShortScreenshotsItem?>? = null,
+    val shortScreenshots: List<GameResponseShortScreenshotsItem?>? = null,
 
     @field:SerializedName("platforms")
-    val platforms: List<PlatformsItem?>? = null,
+    val platforms: List<GameResponsePlatformsItem?>? = null,
 
     @field:SerializedName("background_image")
     val backgroundImage: String? = "https://pertaniansehat.com/v01/wp-content/uploads/2015/08/default-placeholder.png",
 
     @field:SerializedName("genres")
-    val genres: List<GenresItem?>? = null,
+    val genres: List<GameResponseGenresItem?>? = null,
 
     @field:SerializedName("name")
     val name: String? = null,
@@ -124,7 +124,7 @@ data class ResultsItem(
     val id: Int? = null,
 
     @field:SerializedName("parent_platforms")
-    val parentPlatforms: List<ParentPlatformsItem?>? = null,
+    val parentPlatforms: List<GameResponseParentPlatformsItem?>? = null,
 
     @field:SerializedName("released")
     val released: String? = null

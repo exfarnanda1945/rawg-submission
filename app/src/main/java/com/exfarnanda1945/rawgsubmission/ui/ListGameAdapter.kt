@@ -11,15 +11,15 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.exfarnanda1945.rawgsubmission.databinding.RvListGameBinding
-import com.exfarnanda1945.rawgsubmission.model.ResultsItem
+import com.exfarnanda1945.rawgsubmission.model.GameResponseResultsItem
 
 open class ListGameAdapter:RecyclerView.Adapter<ListGameAdapter.MainViewHolder>() {
-    private val diffCallBack = object : DiffUtil.ItemCallback<ResultsItem>() {
-        override fun areItemsTheSame(oldItem: ResultsItem, newItem: ResultsItem): Boolean {
+    private val diffCallBack = object : DiffUtil.ItemCallback<GameResponseResultsItem>() {
+        override fun areItemsTheSame(oldItem: GameResponseResultsItem, newItem: GameResponseResultsItem): Boolean {
             return oldItem.id == newItem.id
         }
 
-        override fun areContentsTheSame(oldItem: ResultsItem, newItem: ResultsItem): Boolean {
+        override fun areContentsTheSame(oldItem: GameResponseResultsItem, newItem: GameResponseResultsItem): Boolean {
             return oldItem == newItem
         }
     }
@@ -71,7 +71,7 @@ open class ListGameAdapter:RecyclerView.Adapter<ListGameAdapter.MainViewHolder>(
         return differ.currentList.size
     }
 
-    fun setData(list: List<ResultsItem?>?) {
+    fun setData(list: List<GameResponseResultsItem?>?) {
         differ.submitList(list)
     }
     fun setOnItemClickCallback(action: IOnItemCallBack){
@@ -79,6 +79,6 @@ open class ListGameAdapter:RecyclerView.Adapter<ListGameAdapter.MainViewHolder>(
     }
 
    interface IOnItemCallBack{
-        fun onItemClickCallback(data: ResultsItem)
+        fun onItemClickCallback(data: GameResponseResultsItem)
     }
 }
