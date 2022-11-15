@@ -1,47 +1,55 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ui.Home.HomeFragment">
-    <!-- App Name   -->
+
     <TextView
         android:id="@+id/app_name_tv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="10dp"
-        android:layout_marginTop="10dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
         android:text="@string/androrawg_store"
         android:textSize="28sp"
         android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
         tools:ignore="RelativeOverlap" />
-    <!--App Name Desc-->
+
     <TextView
         android:id="@+id/app_name_desc_tv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/app_name_tv"
-        android:layout_marginStart="10dp"
-        android:layout_marginTop="-5dp"
+        android:layout_marginStart="16dp"
         android:text="@string/find_your_best_game_here"
         android:textSize="14sp"
-        android:textStyle="italic" />
-    <!--User Icon-->
+        android:textStyle="italic"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/app_name_tv" />
+
     <ImageView
         android:layout_width="56dp"
         android:layout_height="56dp"
         android:layout_alignParentEnd="true"
-        android:layout_marginTop="10dp"
-        android:layout_marginEnd="25dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
         android:contentDescription="@string/user_logo"
-        android:src="@mipmap/ic_launcher" />
+        android:src="@mipmap/ic_launcher"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <!--Image Slider-->
     <RelativeLayout
         android:id="@+id/image_slider_wrapper"
         android:layout_width="match_parent"
         android:layout_height="200dp"
+        android:layout_marginTop="8dp"
         android:layout_below="@+id/app_name_desc_tv"
-        android:layout_marginTop="15dp">
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/app_name_desc_tv">
 
         <TextView
             android:id="@+id/error_tv_slider"
@@ -79,35 +87,75 @@
         </RelativeLayout>
     </RelativeLayout>
 
-    <!--Button Row-->
-    <Button
-        android:id="@+id/find_game_btn"
-        android:layout_width="wrap_content"
+    <!--Row Button-->
+    <RelativeLayout
+        android:id="@+id/relativeLayout"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/image_slider_wrapper"
-        android:layout_centerInParent="true"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="14dp"
-        android:drawableEnd="@drawable/ic_baseline_search_24"
-        android:text="@string/find_favorite_game"
-        android:textAllCaps="false" />
-    <!--Goty Game-->
+        android:layout_marginTop="8dp"
+        android:paddingHorizontal="4dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/image_slider_wrapper">
+
+        <Button
+            android:id="@+id/find_game_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/find"
+            android:textAllCaps="false" />
+
+        <Button
+            android:id="@+id/find_genre_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
+            android:layout_toEndOf="@id/find_game_btn"
+            android:text="@string/genres"
+            android:textAllCaps="false" />
+
+        <Button
+            android:id="@+id/find_developer_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
+            android:layout_toEndOf="@id/find_genre_btn"
+            android:text="@string/developer"
+            android:textAllCaps="false" />
+
+        <Button
+            android:id="@+id/find_publisher_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
+            android:layout_toEndOf="@id/find_developer_btn"
+            android:text="@string/publisher"
+            android:textAllCaps="false" />
+    </RelativeLayout>
+
     <TextView
         android:id="@+id/tv_goty"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/find_game_btn"
-        android:layout_marginStart="5dp"
-        android:layout_marginTop="5dp"
+        android:layout_marginStart="16dp"
         android:text="@string/best_game_of_the_year"
         android:textSize="16sp"
-        android:textStyle="bold" />
+        android:layout_marginTop="8dp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/relativeLayout" />
 
     <RelativeLayout
         android:id="@+id/goty_wrapper"
         android:layout_width="match_parent"
         android:layout_height="205dp"
-        android:layout_below="@id/tv_goty">
+        android:layout_below="@id/tv_goty"
+        android:paddingHorizontal="4dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_goty">
 
         <TextView
             android:id="@+id/error_tv_goty"
@@ -136,26 +184,27 @@
             tools:listitem="@layout/rv_best_goty" />
     </RelativeLayout>
 
-
-    <!--Latest Game Release-->
     <TextView
         android:id="@+id/tv_game_latest"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/goty_wrapper"
-        android:layout_marginStart="5dp"
-        android:layout_marginTop="10dp"
         android:text="@string/latest_game_release"
         android:textSize="16sp"
-        android:textStyle="bold" />
+        android:textStyle="bold"
+        android:layout_marginTop="8dp"
+        android:layout_marginStart="16dp"
+        app:layout_constraintTop_toBottomOf="@+id/goty_wrapper"
+        tools:layout_editor_absoluteX="0dp" />
 
     <RelativeLayout
         android:id="@+id/latest_game_wrapper"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_below="@id/tv_game_latest"
-
-        android:layout_marginEnd="15dp">
+        android:layout_height="wrap_content"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_game_latest"
+        app:layout_constraintVertical_bias="0">
 
         <TextView
             android:id="@+id/error_tv_latest"
@@ -185,4 +234,4 @@
     </RelativeLayout>
 
 
-</RelativeLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -7,7 +7,7 @@
     <string name="game_image">Game Image</string>
     <string name="game_name">Game Name</string>
     <string name="release">Release:</string>
-    <string name="example_date">12-12-2012</string>
+    <string name="example_date">12–12–2012</string>
     <string name="metacritic">Metacritic:</string>
     <string name="example_metacritic">84</string>
     <string name="rating">Rating:</string>
@@ -36,4 +36,8 @@
     <string name="image">Image</string>
     <string name="screenshoot_game">Screenshoot Game</string>
     <string name="find_your_game">Find your game</string>
+    <string name="find">Find</string>
+    <string name="genres">Genres</string>
+    <string name="developer">Developer</string>
+    <string name="publisher">Publisher</string>
 </resources>

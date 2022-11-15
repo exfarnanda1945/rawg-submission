@@ -54,7 +54,7 @@ class GotyAdapter : RecyclerView.Adapter<GotyAdapter.MainViewHolder>() {
 
         holder.apply {
             Glide.with(itemView.context).load(item.backgroundImage).into(itemImg)
-            itemRelease.text = "release: ${item.released}"
+            itemRelease.text = item.released
             itemTvName.text = item.name
             itemTvRate.text = item.rating.toString()
             itemWrapper.setOnClickListener {
