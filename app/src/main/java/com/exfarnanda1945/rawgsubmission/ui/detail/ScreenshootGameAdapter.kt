@@ -1,4 +1,4 @@
-package com.exfarnanda1945.rawgsubmission.ui.Detail
+package com.exfarnanda1945.rawgsubmission.ui.detail
 
 import android.view.LayoutInflater
 import android.view.ViewGroup

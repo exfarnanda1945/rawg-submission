@@ -1,4 +1,4 @@
-package com.exfarnanda1945.rawgsubmission.ui.Home
+package com.exfarnanda1945.rawgsubmission.ui.home
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -12,7 +12,7 @@ import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.exfarnanda1945.rawgsubmission.R
 import com.exfarnanda1945.rawgsubmission.databinding.FragmentHomeBinding
-import com.exfarnanda1945.rawgsubmission.model.ResultsItem
+import com.exfarnanda1945.rawgsubmission.model.GameResponseResultsItem
 import com.exfarnanda1945.rawgsubmission.ui.ListGameAdapter
 import com.exfarnanda1945.rawgsubmission.utils.HandlerApiClient
 import kotlinx.coroutines.launch
@@ -126,7 +126,7 @@ class HomeFragment : Fragment() {
                                     val gotyAdapter = GotyAdapter()
                                     gotyAdapter.setOnItemClickCallback(object :
                                         GotyAdapter.IOnItemCallBack {
-                                        override fun onItemClickCallback(data: ResultsItem) {
+                                        override fun onItemClickCallback(data: GameResponseResultsItem) {
                                             findNavController().navigate(
                                                 HomeFragmentDirections.actionHomeFragmentToGameDetail(
                                                     data
@@ -195,7 +195,7 @@ class HomeFragment : Fragment() {
 
                                     latestGameAdapter.setOnItemClickCallback(object :
                                         ListGameAdapter.IOnItemCallBack {
-                                        override fun onItemClickCallback(data: ResultsItem) {
+                                        override fun onItemClickCallback(data: GameResponseResultsItem) {
                                             findNavController().navigate(
                                                 HomeFragmentDirections.actionHomeFragmentToGameDetail(
                                                     data

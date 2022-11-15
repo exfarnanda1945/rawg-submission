@@ -1,4 +1,4 @@
-package com.exfarnanda1945.rawgsubmission.ui.Home
+package com.exfarnanda1945.rawgsubmission.ui.home
 
 import android.annotation.SuppressLint
 import android.view.LayoutInflater
@@ -11,16 +11,16 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.exfarnanda1945.rawgsubmission.databinding.RvBestGotyBinding
-import com.exfarnanda1945.rawgsubmission.model.ResultsItem
+import com.exfarnanda1945.rawgsubmission.model.GameResponseResultsItem
 
 class GotyAdapter : RecyclerView.Adapter<GotyAdapter.MainViewHolder>() {
 
-    private val diffCallBack = object : DiffUtil.ItemCallback<ResultsItem>() {
-        override fun areItemsTheSame(oldItem: ResultsItem, newItem: ResultsItem): Boolean {
+    private val diffCallBack = object : DiffUtil.ItemCallback<GameResponseResultsItem>() {
+        override fun areItemsTheSame(oldItem: GameResponseResultsItem, newItem: GameResponseResultsItem): Boolean {
             return oldItem.id == newItem.id
         }
 
-        override fun areContentsTheSame(oldItem: ResultsItem, newItem: ResultsItem): Boolean {
+        override fun areContentsTheSame(oldItem: GameResponseResultsItem, newItem: GameResponseResultsItem): Boolean {
             return oldItem == newItem
         }
     }
@@ -67,7 +67,7 @@ class GotyAdapter : RecyclerView.Adapter<GotyAdapter.MainViewHolder>() {
         return differ.currentList.size
     }
 
-    fun setData(list: List<ResultsItem?>?) {
+    fun setData(list: List<GameResponseResultsItem?>?) {
         differ.submitList(list)
     }
 
@@ -76,6 +76,6 @@ class GotyAdapter : RecyclerView.Adapter<GotyAdapter.MainViewHolder>() {
     }
 
     interface IOnItemCallBack{
-        fun onItemClickCallback(data:ResultsItem)
+        fun onItemClickCallback(data:GameResponseResultsItem)
     }
 }

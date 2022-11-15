@@ -1,8 +1,9 @@
-package com.exfarnanda1945.rawgsubmission.ui.Home
+package com.exfarnanda1945.rawgsubmission.ui.home
+
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.exfarnanda1945.rawgsubmission.model.GameResponse
+import com.exfarnanda1945.rawgsubmission.model.GameResponseList
 import com.exfarnanda1945.rawgsubmission.network.config.ApiService
 import com.exfarnanda1945.rawgsubmission.network.handler.ApiResponse
 import com.exfarnanda1945.rawgsubmission.repository.GamesRepository
@@ -11,7 +12,7 @@ import kotlinx.coroutines.launch
 
 class HomeViewModel:ViewModel() {
     private val repo =GamesRepository(ApiService.GameService)
-    private val responseLoading = ApiResponse.loading<GameResponse>()
+    private val responseLoading = ApiResponse.loading<GameResponseList>()
 
     val gameListBanner= MutableStateFlow(responseLoading)
     val gameBestOfTheYear = MutableStateFlow(responseLoading)

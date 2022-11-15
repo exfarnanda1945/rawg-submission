@@ -1,4 +1,4 @@
-package com.exfarnanda1945.rawgsubmission.ui.Home
+package com.exfarnanda1945.rawgsubmission.ui.home
 
 import android.content.Context
 import android.view.LayoutInflater
@@ -10,9 +10,9 @@ import androidx.viewpager.widget.PagerAdapter
 import androidx.viewpager.widget.ViewPager
 import com.bumptech.glide.Glide
 import com.exfarnanda1945.rawgsubmission.R
-import com.exfarnanda1945.rawgsubmission.model.ResultsItem
+import com.exfarnanda1945.rawgsubmission.model.GameResponseResultsItem
 
-class ImageSlideBannerAdapter(private val context: Context, private var data: List<ResultsItem?>?) :
+class ImageSlideBannerAdapter(private val context: Context, private var data: List<GameResponseResultsItem?>?) :
     PagerAdapter() {
 
     override fun getCount(): Int {

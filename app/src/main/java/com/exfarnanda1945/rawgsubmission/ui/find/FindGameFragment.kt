@@ -1,4 +1,4 @@
-package com.exfarnanda1945.rawgsubmission.ui.Find
+package com.exfarnanda1945.rawgsubmission.ui.find
 
 import android.annotation.SuppressLint
 import android.os.Bundle
@@ -16,7 +16,7 @@ import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.exfarnanda1945.rawgsubmission.R
 import com.exfarnanda1945.rawgsubmission.databinding.FragmentFindGameBinding
-import com.exfarnanda1945.rawgsubmission.model.ResultsItem
+import com.exfarnanda1945.rawgsubmission.model.GameResponseResultsItem
 import com.exfarnanda1945.rawgsubmission.ui.ListGameAdapter
 import com.exfarnanda1945.rawgsubmission.utils.HandlerApiClient
 import kotlinx.coroutines.launch
@@ -90,7 +90,7 @@ class FindGameFragment : Fragment() {
                                 if(res?.size != 0){
                                     mAdapter.setOnItemClickCallback(object :
                                         ListGameAdapter.IOnItemCallBack {
-                                        override fun onItemClickCallback(data: ResultsItem) {
+                                        override fun onItemClickCallback(data: GameResponseResultsItem) {
                                             findNavController().navigate(
                                                 FindGameFragmentDirections.actionFindGameFragmentToGameDetail(
                                                     data
