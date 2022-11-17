@@ -3,8 +3,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-android:layout_marginStart="5dp"
-    android:layout_marginEnd="20dp"
+    android:paddingHorizontal="16dp"
+    android:background="#1a1c1e"
     tools:context=".ui.find.FindGameFragment">
 
     <TextView
@@ -12,6 +12,8 @@ android:layout_marginStart="5dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/result_from"
+        android:textColor="@color/white"
+        android:layout_marginTop="16dp"
         android:textStyle="bold" />
 
     <TextView
@@ -22,10 +24,12 @@ android:layout_marginStart="5dp"
         android:layout_centerVertical="true"
         android:layout_marginTop="320dp"
         android:text="@string/cannot_load_the_data"
+        android:textColor="@color/white"
         android:textAlignment="center"
         android:visibility="invisible" />
 
     <androidx.recyclerview.widget.RecyclerView
+        android:layout_marginTop="16dp"
         android:id="@+id/rv_find_game"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
