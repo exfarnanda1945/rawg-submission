@@ -8,9 +8,9 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.viewpager.widget.PagerAdapter
 import androidx.viewpager.widget.ViewPager
-import com.bumptech.glide.Glide
 import com.exfarnanda1945.rawgsubmission.R
-import com.exfarnanda1945.rawgsubmission.model.GameResponseResultsItem
+import com.exfarnanda1945.rawgsubmission.model.game_response.GameResponseResultsItem
+import com.exfarnanda1945.rawgsubmission.utils.loadImage
 
 class ImageSlideBannerAdapter(private val context: Context, private var data: List<GameResponseResultsItem?>?) :
     PagerAdapter() {
@@ -32,9 +32,7 @@ class ImageSlideBannerAdapter(private val context: Context, private var data: Li
         val itemGameName = view.findViewById<TextView>(R.id.item_name_slider_banner )
 
         data?.get(position).let {
-            Glide.with(context)
-                .load(it?.backgroundImage)
-                .into(itemImagesSlider)
+            loadImage(context,it?.backgroundImage,itemImagesSlider)
             itemGameName.text = it?.name
         }
 

@@ -9,9 +9,9 @@ import androidx.cardview.widget.CardView
 import androidx.recyclerview.widget.AsyncListDiffer
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
-import com.bumptech.glide.Glide
 import com.exfarnanda1945.rawgsubmission.databinding.RvListGameBinding
-import com.exfarnanda1945.rawgsubmission.model.GameResponseResultsItem
+import com.exfarnanda1945.rawgsubmission.model.game_response.GameResponseResultsItem
+import com.exfarnanda1945.rawgsubmission.utils.loadImage
 
 open class ListGameAdapter:RecyclerView.Adapter<ListGameAdapter.MainViewHolder>() {
     private val diffCallBack = object : DiffUtil.ItemCallback<GameResponseResultsItem>() {
@@ -30,7 +30,6 @@ open class ListGameAdapter:RecyclerView.Adapter<ListGameAdapter.MainViewHolder>(
     inner class MainViewHolder(itemBinding: RvListGameBinding) :
         RecyclerView.ViewHolder(itemBinding.root) {
         val itemImg: ImageView = itemBinding.itemImg
-        val itemTvPlatform: TextView = itemBinding.itemPlatform
         val itemRelease: TextView = itemBinding.itemRelease
         val itemTvName: TextView = itemBinding.itemName
         val itemTvRate: TextView = itemBinding.itemRating
@@ -52,15 +51,10 @@ open class ListGameAdapter:RecyclerView.Adapter<ListGameAdapter.MainViewHolder>(
         val item = differ.currentList[position]
 
         holder.apply {
-            Glide.with(itemView.context).load(item.backgroundImage).into(itemImg)
-            itemRelease.text = "Release: ${item.released}"
-            itemTvPlatform.text = "Platform: ${
-                item.parentPlatforms?.map {
-                    it?.platform?.name
-                }?.joinToString()
-            }"
+            loadImage(itemView.context,item.backgroundImage,itemImg)
+            itemRelease.text = item.released
             itemTvName.text = item.name
-            itemTvRate.text = "${item.rating.toString()}/5"
+            itemTvRate.text = item.rating.toString()
             itemWrapper.setOnClickListener {
                 onItemCallBack.onItemClickCallback(item)
             }

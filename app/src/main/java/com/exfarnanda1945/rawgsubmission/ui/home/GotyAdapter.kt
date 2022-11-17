@@ -4,14 +4,14 @@ import android.annotation.SuppressLint
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import android.widget.ImageView
-import android.widget.RelativeLayout
 import android.widget.TextView
+import androidx.cardview.widget.CardView
 import androidx.recyclerview.widget.AsyncListDiffer
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
-import com.bumptech.glide.Glide
 import com.exfarnanda1945.rawgsubmission.databinding.RvBestGotyBinding
-import com.exfarnanda1945.rawgsubmission.model.GameResponseResultsItem
+import com.exfarnanda1945.rawgsubmission.model.game_response.GameResponseResultsItem
+import com.exfarnanda1945.rawgsubmission.utils.loadImage
 
 class GotyAdapter : RecyclerView.Adapter<GotyAdapter.MainViewHolder>() {
 
@@ -32,10 +32,8 @@ class GotyAdapter : RecyclerView.Adapter<GotyAdapter.MainViewHolder>() {
     inner class MainViewHolder(itemBinding: RvBestGotyBinding) :
         RecyclerView.ViewHolder(itemBinding.root) {
         val itemImg: ImageView = itemBinding.imgItemGoty
-        val itemRelease: TextView = itemBinding.releaseItemGoty
         val itemTvName: TextView = itemBinding.nameItemGoty
-        val itemTvRate: TextView = itemBinding.rateItemGoty
-        val itemWrapper:RelativeLayout = itemBinding.rvGotyWrapper
+        val itemWrapper:CardView = itemBinding.rvGotyWrapper
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MainViewHolder {
@@ -53,10 +51,8 @@ class GotyAdapter : RecyclerView.Adapter<GotyAdapter.MainViewHolder>() {
         val item = differ.currentList[position]
 
         holder.apply {
-            Glide.with(itemView.context).load(item.backgroundImage).into(itemImg)
-            itemRelease.text = item.released
+            loadImage(itemView.context,item.backgroundImage,itemImg)
             itemTvName.text = item.name
-            itemTvRate.text = item.rating.toString()
             itemWrapper.setOnClickListener {
                 onItemCallBack.onItemClickCallback(item)
             }

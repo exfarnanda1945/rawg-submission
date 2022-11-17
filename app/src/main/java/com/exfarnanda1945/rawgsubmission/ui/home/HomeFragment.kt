@@ -12,7 +12,7 @@ import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.exfarnanda1945.rawgsubmission.R
 import com.exfarnanda1945.rawgsubmission.databinding.FragmentHomeBinding
-import com.exfarnanda1945.rawgsubmission.model.GameResponseResultsItem
+import com.exfarnanda1945.rawgsubmission.model.game_response.GameResponseResultsItem
 import com.exfarnanda1945.rawgsubmission.ui.ListGameAdapter
 import com.exfarnanda1945.rawgsubmission.utils.HandlerApiClient
 import kotlinx.coroutines.launch
