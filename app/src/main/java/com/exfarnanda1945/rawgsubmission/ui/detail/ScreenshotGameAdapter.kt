@@ -6,17 +6,18 @@ import android.widget.ImageView
 import androidx.recyclerview.widget.AsyncListDiffer
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
-import com.bumptech.glide.Glide
 import com.exfarnanda1945.rawgsubmission.databinding.RvScreenshootGameBinding
+import com.exfarnanda1945.rawgsubmission.model.game_screenshots.GameScreenshotsResultsItem
+import com.exfarnanda1945.rawgsubmission.utils.loadImage
 
-class ScreenshootGameAdapter : RecyclerView.Adapter<ScreenshootGameAdapter.MainViewHolder>() {
+class ScreenshotGameAdapter : RecyclerView.Adapter<ScreenshotGameAdapter.MainViewHolder>() {
 
-    private val diffCallBack = object : DiffUtil.ItemCallback<String>() {
-        override fun areItemsTheSame(oldItem: String, newItem: String): Boolean {
-            return oldItem == newItem
+    private val diffCallBack = object : DiffUtil.ItemCallback<GameScreenshotsResultsItem>() {
+        override fun areItemsTheSame(oldItem: GameScreenshotsResultsItem, newItem: GameScreenshotsResultsItem): Boolean {
+            return oldItem.id == newItem.id
         }
 
-        override fun areContentsTheSame(oldItem: String, newItem: String): Boolean {
+        override fun areContentsTheSame(oldItem: GameScreenshotsResultsItem, newItem: GameScreenshotsResultsItem): Boolean {
             return oldItem == newItem
         }
     }
@@ -25,7 +26,7 @@ class ScreenshootGameAdapter : RecyclerView.Adapter<ScreenshootGameAdapter.MainV
 
     inner class MainViewHolder(itemBinding: RvScreenshootGameBinding) :
         RecyclerView.ViewHolder(itemBinding.root) {
-        val screenShootImage: ImageView = itemBinding.itemScreenshootGame
+        val screenShootImage: ImageView = itemBinding.itemScreenshotGame
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MainViewHolder {
@@ -40,7 +41,7 @@ class ScreenshootGameAdapter : RecyclerView.Adapter<ScreenshootGameAdapter.MainV
 
     override fun onBindViewHolder(holder: MainViewHolder, position: Int) {
         holder.apply {
-            Glide.with(itemView.context).load(differ.currentList[position]).into(screenShootImage)
+            loadImage(itemView.context,differ.currentList[position].image,screenShootImage)
         }
     }
 
@@ -48,7 +49,7 @@ class ScreenshootGameAdapter : RecyclerView.Adapter<ScreenshootGameAdapter.MainV
         return differ.currentList.size
     }
 
-    fun setData(list: List<String?>?) {
+    fun setData(list: List<GameScreenshotsResultsItem?>?) {
         differ.submitList(list)
     }
 }
