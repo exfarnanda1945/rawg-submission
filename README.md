@@ -15,9 +15,6 @@ Become An Android Developer RAWG Submission
 - Fragment for Search Game
 - Fragment for Detail Game
 
-# Bug
-- for some reason UI right padding/ margin not as expected 
-
 # Screenshoot
 ![Home Layout](https://i.ibb.co/r4RD5zc/Screenshot-20221118-001928.png)
 ![Find Game Layout](https://i.ibb.co/VJnWqjL/Screenshot-20221118-002050.png)
