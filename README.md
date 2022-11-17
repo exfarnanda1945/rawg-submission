@@ -19,7 +19,7 @@ Become An Android Developer RAWG Submission
 - for some reason UI right padding/ margin not as expected 
 
 # Screenshoot
-![Home Layout](https://i.ibb.co/drP6Lch/Screenshot-1.png)
-![Find Game Layout](https://i.ibb.co/9hWg8Sx/Screenshot-2.png)
-![Detail Game Layout](https://i.ibb.co/pWdXMRR/Screenshot-3.png)
-![Detail Screenshoot Game](https://i.ibb.co/LQs0WvL/Screenshot-4.png)
+![Home Layout](https://i.ibb.co/r4RD5zc/Screenshot-20221118-001928.png)
+![Find Game Layout](https://i.ibb.co/VJnWqjL/Screenshot-20221118-002050.png)
+![Detail Game Layout](https://i.ibb.co/k3D2Xw7/Screenshot-20221118-002006.png)
+![Detail Screenshoot Game](https://i.ibb.co/ZN7Nr0G/Screenshot-20221118-002022.png)
