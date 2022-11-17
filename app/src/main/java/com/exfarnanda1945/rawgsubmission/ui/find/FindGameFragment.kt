@@ -16,7 +16,7 @@ import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.exfarnanda1945.rawgsubmission.R
 import com.exfarnanda1945.rawgsubmission.databinding.FragmentFindGameBinding
-import com.exfarnanda1945.rawgsubmission.model.GameResponseResultsItem
+import com.exfarnanda1945.rawgsubmission.model.game_response.GameResponseResultsItem
 import com.exfarnanda1945.rawgsubmission.ui.ListGameAdapter
 import com.exfarnanda1945.rawgsubmission.utils.HandlerApiClient
 import kotlinx.coroutines.launch
@@ -28,6 +28,7 @@ class FindGameFragment : Fragment() {
     private val binding get() = _binding!!
     private val mViewModel: FindGameViewModel by viewModels()
 
+    @SuppressLint("SetTextI18n")
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -51,7 +52,6 @@ class FindGameFragment : Fragment() {
                         @SuppressLint("SetTextI18n")
                         override fun onQueryTextSubmit(query: String): Boolean {
                             searchGame(query)
-                            binding.keyResultFindGame.text = "Result from $query:"
                             return true
                         }
 
@@ -70,6 +70,9 @@ class FindGameFragment : Fragment() {
         }, viewLifecycleOwner, Lifecycle.State.RESUMED)
 
         lifecycleScope.launch {
+            mViewModel.querySearch.observe(viewLifecycleOwner){
+                binding.keyResultFindGame.text = "Result from $it:"
+            }
             mViewModel.searchResult.collect {
                 HandlerApiClient.handle(
                     it,
