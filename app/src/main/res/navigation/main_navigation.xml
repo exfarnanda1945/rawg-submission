@@ -23,7 +23,7 @@
         tools:layout="@layout/fragment_game_detail" >
         <argument
             android:name="gameDetails"
-            app:argType="com.exfarnanda1945.rawgsubmission.model.GameResponseResultsItem" />
+            app:argType="com.exfarnanda1945.rawgsubmission.model.game_response.GameResponseResultsItem" />
     </fragment>
     <fragment
         android:id="@+id/findGameFragment"
