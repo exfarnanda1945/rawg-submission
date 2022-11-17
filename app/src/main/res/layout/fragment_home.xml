@@ -4,52 +4,98 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#111315"
     tools:context=".ui.home.HomeFragment">
-
-    <TextView
-        android:id="@+id/app_name_tv"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="8dp"
-        android:text="@string/androrawg_store"
-        android:textSize="28sp"
-        android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="RelativeOverlap" />
-
-    <TextView
-        android:id="@+id/app_name_desc_tv"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:text="@string/find_your_best_game_here"
-        android:textSize="14sp"
-        android:textStyle="italic"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/app_name_tv" />
-
-    <ImageView
-        android:layout_width="56dp"
-        android:layout_height="56dp"
-        android:layout_alignParentEnd="true"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:contentDescription="@string/user_logo"
-        android:src="@mipmap/ic_launcher"
+    <!--AppBar Section-->
+    <RelativeLayout
+        android:id="@+id/appbar_section"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:background="#1a1c1e"
+        android:paddingHorizontal="16dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="8dp"
+            android:text="@string/androrawg_store"
+            android:textColor="#fdfefe"
+            android:textSize="26sp"
+            android:textStyle="bold"
+            tools:ignore="RelativeOverlap" />
+
+        <ImageView
+            android:layout_width="64dp"
+            android:layout_height="64dp"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:contentDescription="@string/user_logo"
+            android:src="@drawable/gamer" />
+    </RelativeLayout>
+
+    <!--Row Button Section-->
+    <LinearLayout
+        android:id="@+id/row_button_section"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:gravity="center"
+        android:orientation="horizontal"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/appbar_section">
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/find_game_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTint="#2ecc71"
+            android:drawableStart="@drawable/ic_baseline_search_24"
+            android:text="@string/find"
+            android:textColor="@color/white" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/find_genre_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
+            android:backgroundTint="#3498db"
+            android:text="@string/genres"
+            android:textColor="@color/white" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/find_developer_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
+            android:backgroundTint="#9b59b6"
+            android:text="@string/developer"
+            android:textColor="@color/white" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/find_publisher_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
+            android:backgroundTint="#f39c12"
+            android:text="@string/publisher"
+            android:textColor="@color/white" />
+    </LinearLayout>
 
     <!--Image Slider-->
     <RelativeLayout
         android:id="@+id/image_slider_wrapper"
         android:layout_width="match_parent"
         android:layout_height="200dp"
-        android:layout_marginTop="8dp"
-        android:layout_below="@+id/app_name_desc_tv"
+        android:layout_marginTop="12dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/app_name_desc_tv">
+        app:layout_constraintTop_toBottomOf="@+id/row_button_section">
 
         <TextView
             android:id="@+id/error_tv_slider"
@@ -58,6 +104,7 @@
             android:layout_centerInParent="true"
             android:text="@string/cannot_load_the_data"
             android:textAlignment="center"
+            android:textColor="@color/white"
             android:visibility="invisible" />
 
         <ProgressBar
@@ -86,71 +133,28 @@
                 android:elevation="4dp" />
         </RelativeLayout>
     </RelativeLayout>
-
-    <!--Row Button-->
-    <RelativeLayout
-        android:id="@+id/relativeLayout"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:paddingHorizontal="4dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/image_slider_wrapper">
-
-        <Button
-            android:id="@+id/find_game_btn"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/find"
-            android:textAllCaps="false" />
-
-        <Button
-            android:id="@+id/find_genre_btn"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="4dp"
-            android:layout_toEndOf="@id/find_game_btn"
-            android:text="@string/genres"
-            android:textAllCaps="false" />
-
-        <Button
-            android:id="@+id/find_developer_btn"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="4dp"
-            android:layout_toEndOf="@id/find_genre_btn"
-            android:text="@string/developer"
-            android:textAllCaps="false" />
-
-        <Button
-            android:id="@+id/find_publisher_btn"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="4dp"
-            android:layout_toEndOf="@id/find_developer_btn"
-            android:text="@string/publisher"
-            android:textAllCaps="false" />
-    </RelativeLayout>
-
+<!--Goty Section-->
     <TextView
         android:id="@+id/tv_goty"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
         android:text="@string/best_game_of_the_year"
+        android:textColor="@color/white"
         android:textSize="16sp"
-        android:layout_marginTop="8dp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/relativeLayout" />
+        app:layout_constraintTop_toBottomOf="@+id/image_slider_wrapper" />
 
     <RelativeLayout
         android:id="@+id/goty_wrapper"
         android:layout_width="match_parent"
-        android:layout_height="205dp"
+        android:layout_height="wrap_content"
         android:layout_below="@id/tv_goty"
+        android:layout_marginTop="8dp"
         android:paddingHorizontal="4dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -164,6 +168,7 @@
             android:layout_centerInParent="true"
             android:text="@string/cannot_load_the_data"
             android:textAlignment="center"
+            android:textColor="@color/white"
             android:visibility="invisible" />
 
         <ProgressBar
@@ -176,24 +181,27 @@
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rv_goty"
             android:layout_width="match_parent"
-            android:layout_height="200dp"
+            android:layout_height="wrap_content"
             android:layout_marginStart="5dp"
             android:layout_marginTop="2dp"
             android:layout_marginEnd="5dp"
             android:orientation="horizontal"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
             tools:listitem="@layout/rv_best_goty" />
     </RelativeLayout>
 
+    <!--Latest Game Section-->
     <TextView
         android:id="@+id/tv_game_latest"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/goty_wrapper"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
         android:text="@string/latest_game_release"
+        android:textColor="@color/white"
         android:textSize="16sp"
         android:textStyle="bold"
-        android:layout_marginTop="8dp"
-        android:layout_marginStart="16dp"
         app:layout_constraintTop_toBottomOf="@+id/goty_wrapper"
         tools:layout_editor_absoluteX="0dp" />
 
@@ -201,6 +209,8 @@
         android:id="@+id/latest_game_wrapper"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:paddingHorizontal="8dp"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tv_game_latest"
@@ -211,8 +221,10 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
+            android:layout_marginTop="200dp"
             android:text="@string/cannot_load_the_data"
             android:textAlignment="center"
+            android:textColor="@color/white"
             android:visibility="invisible" />
 
         <ProgressBar
@@ -220,18 +232,15 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
+            android:layout_marginTop="200dp"
             android:visibility="invisible" />
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rv_latest_release"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_marginStart="5dp"
-            android:layout_marginTop="2dp"
-            android:layout_marginEnd="5dp"
             android:orientation="horizontal"
             tools:listitem="@layout/rv_list_game" />
     </RelativeLayout>
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>

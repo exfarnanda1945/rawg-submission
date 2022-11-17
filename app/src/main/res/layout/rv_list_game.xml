@@ -1,16 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/latest_game_item_wrapper"
     xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/latest_game_item_wrapper"
     android:layout_width="match_parent"
-    android:layout_height="130dp"
-    android:background="@android:drawable/dialog_holo_light_frame"
+    android:layout_height="wrap_content"
+    android:background="@drawable/background_card"
+    android:backgroundTint="#1f2430"
     android:elevation="10dp"
-    card_view:cardMaxElevation="1dp"
     android:orientation="horizontal"
-    card_view:cardCornerRadius="4dp"
-    card_view:cardElevation="4dp"
-    card_view:cardUseCompatPadding="true">
+    android:layout_marginBottom="10dp"
+    card_view:cardCornerRadius="14dp"
+    card_view:cardElevation="10dp"
+    card_view:cardMaxElevation="1dp">
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -18,71 +19,66 @@
 
         <ImageView
             android:id="@+id/item_img"
-            android:layout_width="150dp"
-            android:layout_height="match_parent"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
             android:contentDescription="@string/image"
             android:scaleType="fitXY"
             android:src="@mipmap/ic_launcher" />
 
-        <TextView
-            android:id="@+id/item_name"
+        <RelativeLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="14dp"
-            android:layout_marginTop="5dp"
-            android:layout_toEndOf="@id/item_img"
-            android:maxLines="2"
-            android:text="@string/game_name"
-            android:textSize="17sp"
-            android:textStyle="bold" />
+            android:layout_centerVertical="true"
+            android:layout_toEndOf="@id/item_img">
 
-        <TextView
-            android:id="@+id/item_release"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:maxLines="1"
-            android:layout_marginStart="14dp"
-            android:textSize="12sp"
-            android:layout_marginTop="5dp"
-            android:text="@string/example_date"
-            android:layout_toEndOf="@id/item_img"
-            android:layout_below="@id/item_name"
-            android:ellipsize="end"
-            android:justificationMode="inter_word"/>
+            <TextView
+                android:id="@+id/item_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="5dp"
+                android:maxLines="2"
+                android:text="@string/game_name"
+                android:textColor="@color/white"
+                android:textSize="17sp"
+                android:layout_marginEnd="4dp"
+                android:textStyle="bold" />
 
-        <TextView
-           android:id="@+id/item_platform"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:maxLines="1"
-            android:layout_marginStart="14dp"
-            android:textSize="12sp"
-            android:text="@string/platform"
-            android:layout_toEndOf="@id/item_img"
-            android:layout_below="@id/item_release"
-            android:ellipsize="end"
-            android:justificationMode="inter_word"
-            />
-        <ImageView
-            android:id="@+id/item_star_img"
-            android:layout_width="24dp"
-            android:layout_height="24dp"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="2dp"
-            android:contentDescription="@string/rate"
-            android:src="@drawable/ic_star_rate"
-            android:layout_below="@id/item_platform"
-            android:layout_toEndOf="@id/item_img"/>
-        <TextView
-            android:id="@+id/item_rating"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/example_rate"
-            android:textSize="14sp"
-            android:layout_toEndOf="@id/item_star_img"
-            android:layout_below="@id/item_platform"
-            android:layout_marginTop="2dp"
-            android:layout_marginStart="4dp"/>
+            <TextView
+                android:id="@+id/item_release"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/item_name"
+                android:layout_marginStart="16dp"
+                android:ellipsize="end"
+                android:justificationMode="inter_word"
+                android:maxLines="1"
+                android:text="@string/example_date"
+                android:textColor="#84878e"
+                android:textSize="12sp" />
+
+            <ImageView
+                android:id="@+id/item_star_img"
+                android:layout_width="16dp"
+                android:layout_height="16dp"
+                android:layout_below="@id/item_release"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="4dp"
+                android:contentDescription="@string/rate"
+                android:src="@drawable/ic_star_rate" />
+
+            <TextView
+                android:id="@+id/item_rating"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/item_release"
+                android:layout_marginStart="4dp"
+                android:layout_marginTop="4dp"
+                android:layout_toEndOf="@id/item_star_img"
+                android:text="@string/example_rate"
+                android:textColor="#ebc407"
+                android:textSize="12sp" />
+        </RelativeLayout>
 
     </RelativeLayout>
 
