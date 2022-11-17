@@ -28,7 +28,7 @@ data class ApiResponse<T>(
         object Loading:Status()
     }
 
-    val failed: Boolean
+    private val failed: Boolean
         get() = this.status == Status.Failure
 
     val isSuccessful:Boolean

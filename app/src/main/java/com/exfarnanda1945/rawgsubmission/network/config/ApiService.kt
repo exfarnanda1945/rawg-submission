@@ -1,6 +1,8 @@
 package com.exfarnanda1945.rawgsubmission.network.config
 
 import com.exfarnanda1945.rawgsubmission.network.api.GamesApi
+import com.exfarnanda1945.rawgsubmission.network.api.GamesDetailApi
+import com.exfarnanda1945.rawgsubmission.network.api.GamesScreenshotsApi
 import okhttp3.OkHttpClient
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
@@ -24,5 +26,12 @@ object ApiService {
 
     val GameService:GamesApi by lazy {
         retrofit.create(GamesApi::class.java)
+    }
+    val GameDetailService:GamesDetailApi by lazy{
+        retrofit.create(GamesDetailApi::class.java)
+    }
+
+    val GameScreenshotsService:GamesScreenshotsApi by lazy {
+        retrofit.create(GamesScreenshotsApi::class.java)
     }
 }
