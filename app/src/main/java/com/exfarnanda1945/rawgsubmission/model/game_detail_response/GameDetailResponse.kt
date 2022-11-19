@@ -34,7 +34,7 @@ data class GameDetailResponse(
 	@field:SerializedName("background_image")
 	val backgroundImage: String? = null,
 
-	@field:SerializedName("genres")
+	@field:SerializedName("genre")
 	val genres: List<GameDetailGenresItem?>? = null,
 
 	@field:SerializedName("name")
