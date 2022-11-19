@@ -77,7 +77,7 @@
                     android:layout_marginTop="10dp"
                     android:layout_toEndOf="@id/item_star_img"
                     android:text="@string/example_rate"
-                    android:textColor="#ebc407"
+                    android:textColor="@color/yellow_star"
                     android:textSize="20sp" />
             </RelativeLayout>
         </RelativeLayout>

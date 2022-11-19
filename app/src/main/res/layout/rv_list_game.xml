@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:background="@drawable/background_card"
-    android:backgroundTint="#1f2430"
+    android:backgroundTint="@color/black_blue"
     android:elevation="10dp"
     android:orientation="horizontal"
     android:layout_marginBottom="10dp"
@@ -76,7 +76,7 @@
                 android:layout_marginTop="4dp"
                 android:layout_toEndOf="@id/item_star_img"
                 android:text="@string/example_rate"
-                android:textColor="#ebc407"
+                android:textColor="@color/yellow_star"
                 android:textSize="12sp" />
         </RelativeLayout>
 

@@ -30,7 +30,7 @@
         android:maxLines="2"
         android:padding="2dp"
         android:text="@string/game_name"
-        android:background="#33000000"
+        android:background="@color/black_transparent"
         android:textColor="@color/white"
         android:textSize="13sp"
         android:textStyle="bold" />
