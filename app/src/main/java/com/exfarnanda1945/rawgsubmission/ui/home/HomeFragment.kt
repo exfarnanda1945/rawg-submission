@@ -38,6 +38,15 @@ class HomeFragment : Fragment() {
             findGameBtn.setOnClickListener {
                 findNavController().navigate(R.id.action_homeFragment_to_findGameFragment)
             }
+            findGenreBtn.setOnClickListener {
+                findNavController().navigate(R.id.action_homeFragment_to_genreListItem)
+            }
+            findDeveloperBtn.setOnClickListener {
+                findNavController().navigate(R.id.action_homeFragment_to_developerListFragment)
+            }
+            findPublisherBtn.setOnClickListener {
+                findNavController().navigate(R.id.action_homeFragment_to_publisherListFragment)
+            }
         }
 
         lifecycleScope.launch {
