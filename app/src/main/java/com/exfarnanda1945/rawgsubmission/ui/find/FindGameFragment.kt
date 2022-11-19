@@ -3,10 +3,6 @@ package com.exfarnanda1945.rawgsubmission.ui.find
 import android.annotation.SuppressLint
 import android.os.Bundle
 import android.view.*
-import android.view.inputmethod.EditorInfo
-import androidx.appcompat.widget.SearchView
-import androidx.core.view.MenuHost
-import androidx.core.view.MenuProvider
 import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
@@ -14,10 +10,10 @@ import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.exfarnanda1945.rawgsubmission.R
 import com.exfarnanda1945.rawgsubmission.databinding.FragmentFindGameBinding
 import com.exfarnanda1945.rawgsubmission.model.game_response.GameResponseResultsItem
 import com.exfarnanda1945.rawgsubmission.ui.ListGameAdapter
+import com.exfarnanda1945.rawgsubmission.utils.BuilderSearchView
 import com.exfarnanda1945.rawgsubmission.utils.HandlerApiClient
 import kotlinx.coroutines.launch
 
@@ -36,38 +32,15 @@ class FindGameFragment : Fragment() {
         _binding = FragmentFindGameBinding.inflate(layoutInflater, container, false)
         val view = binding.root
 
-        val menuHost: MenuHost = requireActivity()
-        menuHost.addMenuProvider(object : MenuProvider {
-            override fun onCreateMenu(menu: Menu, menuInflater: MenuInflater) {
-                menuInflater.inflate(R.menu.search_menu, menu)
-
-                val search = menu.findItem(R.id.search_menu)
-                val searchView = search.actionView as SearchView
-
-                searchView.apply {
-                    imeOptions = EditorInfo.IME_ACTION_SEARCH
-                    isSubmitButtonEnabled =true
-                    queryHint = "Search Here"
-                    setOnQueryTextListener(object : SearchView.OnQueryTextListener {
-                        @SuppressLint("SetTextI18n")
-                        override fun onQueryTextSubmit(query: String): Boolean {
-                            searchGame(query)
-                            return true
-                        }
-
-                        override fun onQueryTextChange(newText: String?): Boolean {
-                            return false
-                        }
-                    })
+        BuilderSearchView.build(
+            requireActivity(),
+            viewLifecycleOwner,
+            Lifecycle.State.RESUMED,
+            object : BuilderSearchView.OnSubmitCallback {
+                override fun onQuerySubmit(query: String) {
+                    searchGame(query)
                 }
-            }
-
-            override fun onMenuItemSelected(menuItem: MenuItem): Boolean {
-                return false
-            }
-
-
-        }, viewLifecycleOwner, Lifecycle.State.RESUMED)
+            })
 
         lifecycleScope.launch {
             mViewModel.querySearch.observe(viewLifecycleOwner){
@@ -86,8 +59,6 @@ class FindGameFragment : Fragment() {
                             handleUi(rv = false,progressBar = false,errorTv = true)
 
                         }
-
-                        @SuppressLint("SetTextI18n")
                         override fun onGetDataSuccess() {
                             it.body.results.let { res ->
                                 if(res?.size != 0){
