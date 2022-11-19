@@ -15,6 +15,15 @@
         <action
             android:id="@+id/action_homeFragment_to_findGameFragment"
             app:destination="@id/findGameFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_genreListItem"
+            app:destination="@id/genreListItem" />
+        <action
+            android:id="@+id/action_homeFragment_to_developerListFragment"
+            app:destination="@id/developerListFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_publisherListFragment"
+            app:destination="@id/publisherListFragment" />
     </fragment>
     <fragment
         android:id="@+id/gameDetail"
@@ -34,4 +43,19 @@
             android:id="@+id/action_findGameFragment_to_gameDetail"
             app:destination="@id/gameDetail" />
     </fragment>
+    <fragment
+        android:id="@+id/genreListItem"
+        android:name="com.exfarnanda1945.rawgsubmission.ui.genre.GenreListFragment"
+        android:label="Genre"
+        tools:layout="@layout/fragment_genre_list_item" />
+    <fragment
+        android:id="@+id/developerListFragment"
+        android:name="com.exfarnanda1945.rawgsubmission.ui.developer.DeveloperListFragment"
+        android:label="Find Developer"
+        tools:layout="@layout/fragment_list_developer" />
+    <fragment
+        android:id="@+id/publisherListFragment"
+        android:name="com.exfarnanda1945.rawgsubmission.ui.publisher.PublisherListFragment"
+        android:label="Find Publisher"
+        tools:layout="@layout/fragment_publisher_list" />
 </navigation>
