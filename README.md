@@ -11,9 +11,10 @@ Become An Android Developer RAWG Submission
 
 # Features
 - Image Slider / Carousel
-- RecylerView Horizontal
+- RecyclerView Horizontal
 - Fragment for Search Game
 - Fragment for Detail Game
+- etc
 
 # Screenshoot
 
