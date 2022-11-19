@@ -273,6 +273,11 @@ class HomeFragment : Fragment() {
         }
     }
 
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
+    }
+
 
     enum class PartUi {
         SLIDER_BANNER, GOTY, LATEST_RELEASE

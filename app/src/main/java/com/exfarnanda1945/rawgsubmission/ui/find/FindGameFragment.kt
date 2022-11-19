@@ -119,6 +119,9 @@ class FindGameFragment : Fragment() {
             errorTvFind.isVisible  = errorTv
         }
     }
-
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
+    }
 
 }
